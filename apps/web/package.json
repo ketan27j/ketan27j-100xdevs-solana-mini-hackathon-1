@@ -11,8 +11,8 @@
   "dependencies": {
     "@repo/ui": "*",
     "@solana/web3.js": "^1.95.2",
-    "@types/bcrypt": "^5.0.2",
-    "bcrypt": "^5.1.1",
+    "@types/bcryptjs": "^2.4.6",
+    "bcryptjs": "^2.4.3",
     "next": "^14.2.5",
     "next-auth": "^4.24.7",
     "node-cron": "^3.0.3",
