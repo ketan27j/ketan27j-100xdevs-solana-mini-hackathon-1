@@ -21,6 +21,23 @@ model User {
   password  String
 }
 
+model SolanaWallet {
+  id         Int      @id @default(autoincrement())
+  address    String   @unique
+  threshold  Float
+  createdAt  DateTime @default(now())
+  transactions Transaction[]
+}
+
+model Transaction {
+  id         Int      @id @default(autoincrement())
+  walletId   Int
+  amount     Float
+  signature  String   @unique
+  timestamp  DateTime @default(now())
+  wallet     SolanaWallet @relation(fields: [walletId], references: [id])
+}
+
 enum AuthType {
   Google
   Github
