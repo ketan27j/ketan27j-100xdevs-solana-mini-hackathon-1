@@ -12,14 +12,16 @@
     "@repo/ui": "*",
     "@solana/web3.js": "^1.95.2",
     "@types/bcryptjs": "^2.4.6",
+    "axios": "^1.7.5",
     "bcryptjs": "^2.4.3",
     "next": "^14.2.5",
     "next-auth": "^4.24.7",
     "node-cron": "^3.0.3",
+    "oauth-1.0a": "^2.2.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "recoil": "^0.7.7",
-    "twitter-api-v2": "^1.17.2"
+    "twitter-api-v2": "1.0.0"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",

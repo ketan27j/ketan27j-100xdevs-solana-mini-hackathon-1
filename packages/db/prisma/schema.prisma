@@ -36,6 +36,7 @@ model Transaction {
   signature  String   @unique
   timestamp  DateTime @default(now())
   wallet     SolanaWallet @relation(fields: [walletId], references: [id])
+  tweeted    Boolean @default(false)
 }
 
 enum AuthType {
