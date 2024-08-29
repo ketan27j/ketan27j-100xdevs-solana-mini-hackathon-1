@@ -19,14 +19,17 @@ model User {
   name      String?
   number    String    @unique
   password  String
+  SolanaWallet SolanaWallet[]
 }
 
 model SolanaWallet {
   id         Int      @id @default(autoincrement())
+  userId     Int      @default(0)
   address    String   @unique
   threshold  Float
   createdAt  DateTime @default(now())
   transactions Transaction[]
+  user       User     @relation(fields: [userId], references: [id])
 }
 
 model Transaction {
