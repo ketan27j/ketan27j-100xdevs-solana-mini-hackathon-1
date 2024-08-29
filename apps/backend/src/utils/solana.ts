@@ -5,7 +5,6 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const connection = new Connection(process.env.SOLANA_MAINNET || 'https://api.mainnet-beta.solana.com');
-console.log(process.env.SOLANA_MAINNET);
 
 export async function getLatestTransactions(walletAddress: string): Promise<ParsedTransactionWithMeta[]> {
   const publicKey = new PublicKey(walletAddress);
