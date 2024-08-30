@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
-    "build": "npx prisma generate && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -24,6 +24,7 @@
     "recoil": "^0.7.7"
   },
   "devDependencies": {
+    "@prisma/nextjs-monorepo-workaround-plugin": "^5.19.0",
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
     "@types/node": "^20",
