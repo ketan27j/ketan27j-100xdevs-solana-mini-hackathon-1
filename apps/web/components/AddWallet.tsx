@@ -12,7 +12,7 @@ export const AddWallet = () => {
     return <Card title="Add Wallet Details">
         <div className="w-full">
             <TextInput label="Wallet Address" placeholder="Wallet Address" value={walletAddr} onChange={(value) => {setWalletAddr(value)}} />
-            <TextInput label="Wallet Threshold" placeholder="Wallet Threshold" value={walletThreshold?.toString()} onChange={(value) => {setWalletThreshold(Number(value))}} />
+            <TextInput label="Wallet Threshold" placeholder="Wallet Threshold" value={walletThreshold?.toString() ?? ""} onChange={(value) => {setWalletThreshold(Number(value))}} />
             <div className="flex justify-center pt-4">               
                 <Button onClick={async () => {
                     const res = await addWalletInDb(walletAddr, walletThreshold as number)
