@@ -14,7 +14,7 @@ export const Appbar = ({
     onSignout
 }: AppbarProps) => {
     return <div className="flex justify-between border-b-2 border-b-gray-300 px-4">
-        <div className="text-lg flex flex-col justify-center">
+        <div className="text-4xl font-bold flex flex-col justify-center">
             Whale Alert
         </div>
         <div className="flex flex-col justify-center pt-2">
