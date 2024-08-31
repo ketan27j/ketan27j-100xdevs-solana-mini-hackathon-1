@@ -4,6 +4,7 @@ import TwitterApi from "twitter-api-v2";
 import prisma from '@repo/db';
 import { checkForLargeTransaction, getLatestTransactions, insertTransaction } from "./utils/solana";
 import dotenv from 'dotenv';
+import cron from 'node-cron';
 
 dotenv.config();
 
@@ -58,7 +59,19 @@ app.get("/monitor", async (req, res) => {
             error: error
         });
 }});
+
 app.listen(3003, () => {
     console.log("server is running on port 3003");
 })
 
+// Schedule a task to hit the API every minute
+const url = process.env.API_URL || 'http://localhost:3003/monitor';
+cron.schedule('*/15 * * * *', () => {
+    axios.get(url)
+      .then(response => {
+        console.log('API hit:', response.data);
+      })
+      .catch(error => {
+        console.error('Error hitting API:', error);
+      });
+  });
