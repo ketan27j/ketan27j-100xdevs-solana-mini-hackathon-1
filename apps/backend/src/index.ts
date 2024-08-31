@@ -26,6 +26,7 @@ app.get("/monitor", async (req, res) => {
         const transactions = await getLatestTransactions(wallet.address);
         for (const transaction of transactions) {
             const amountTransferredUSD = checkForLargeTransaction(transaction, solPriceInUsd)
+            console.log(`start-------------amountTransferredUSD ${amountTransferredUSD} wallet threshold ${wallet.threshold}`);
             if (amountTransferredUSD !== 0 && amountTransferredUSD >= wallet.threshold) {
                 const message = `Whale Alert! A transaction of $${amountTransferredUSD} SOL was detected. https://solscan.io/tx/${transaction.transaction.signatures[0]}`;
                 const transactionTweeted = await prisma.transaction.findFirst({
@@ -35,12 +36,14 @@ app.get("/monitor", async (req, res) => {
                     }
                 });
                 if(!transactionTweeted) {
-                    console.log(message);
+                    console.log(`end-------------message ${message}`);
                     await rwClient.v2.tweet(message);
                     await insertTransaction(wallet, transaction, amountTransferredUSD);
+                    } else {
+                        console.log('end-------------Transaction already tweeted');
                     }
                 } else {
-                    console.log('Transaction already tweeted');
+                    console.log('end-------------Transaction below threshold');
                 }
             }
         }
