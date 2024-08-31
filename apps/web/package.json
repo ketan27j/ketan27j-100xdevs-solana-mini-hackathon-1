@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "cd packages/db && npx prisma generate"
+    "postinstall": "cd ../../packages/db && npx prisma generate"
   },
   "dependencies": {
     "@repo/ui": "*",
