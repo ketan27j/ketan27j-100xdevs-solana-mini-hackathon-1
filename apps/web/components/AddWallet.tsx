@@ -20,7 +20,7 @@ export const AddWallet = () => {
                 <Button onClick={async () => {
                     const res = await addWalletInDb(walletAddr, walletThreshold as number)
                     if(res) {
-                        toast.success("Wallet Added Successfully");
+                        toast.success("Wallet added successfully");
                         setWalletAddr("");
                         setWalletThreshold(undefined);
                         setWalletAddState(true);

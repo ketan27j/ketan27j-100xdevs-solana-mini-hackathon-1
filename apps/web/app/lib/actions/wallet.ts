@@ -38,6 +38,25 @@ export async function getWalletDetails(): Promise<SolanaWallet[]> {
     }
 }
 
+export async function deleteWallet(id: number): Promise<boolean> {
+    const session = await getServerSession(authOptions);
+    const userId = Number(session?.user?.id);
+    try {
+        if(userId == null) {
+            return false;
+        }
+        await prisma.solanaWallet.delete({
+            where: {
+                id: id
+            }
+        })
+        return true;
+    } catch(error) {
+        console.log(error);
+        return false;
+    }
+}
+
 export async function getTransactionDetails(): Promise<Transaction[]> {
     const session = await getServerSession(authOptions);
     const userId = Number(session?.user?.id);
