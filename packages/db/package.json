@@ -4,13 +4,6 @@
   "dependencies": {
     "@prisma/client": "^5.11.0"
   },
-  "scripts": {
-    "generate": "npx prisma generate",
-    "deploy": "npx prisma migrate deploy",
-    "dev": "npm run generate && nodemon --watch \"src/**\" --ext \"js,json\" --exec \"node src/index.js\"",
-    "build": "npm run generate",
-    "start": "npm run build && node build/index.js"
-  },
   "devDependencies": {
     "prisma": "5.11.0"
   },

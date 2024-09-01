@@ -5,12 +5,12 @@ import { useState } from "react";
 import { TextInput } from "@repo/ui/textInput";
 import { addWalletInDb } from "../app/lib/actions/wallet";
 import { toast } from "react-hot-toast"
-//https://javascript.plainenglish.io/how-to-create-a-pagination-table-component-in-nextjs-239fe7e067df
+
 export const AddWallet = () => {
     const [walletAddr, setWalletAddr] = useState<string>("");
     const [walletThreshold, setWalletThreshold] = useState<number>();
     return <Card title="Add Wallet Details">
-        <div className="w-full">
+        <div>
             <TextInput label="Wallet Address" placeholder="Wallet Address" value={walletAddr} onChange={(value) => {setWalletAddr(value)}} />
             <TextInput label="Wallet Threshold" placeholder="Wallet Threshold" value={walletThreshold?.toString() ?? ""} onChange={(value) => {setWalletThreshold(Number(value))}} />
             <div className="flex justify-center pt-4">               
