@@ -60,6 +60,20 @@ app.get("/monitor", async (req, res) => {
         });
 }});
 
+app.get("/status", async (req, res) => {
+    try {
+        res.status(200).json({
+            message: "Ok"
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            message: "Internal server error",
+            error: error
+        });
+    }
+});
+
 app.listen(3003, () => {
     console.log("server is running on port 3003");
 })
