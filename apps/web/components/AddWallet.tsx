@@ -5,10 +5,13 @@ import { useState } from "react";
 import { TextInput } from "@repo/ui/textInput";
 import { addWalletInDb } from "../app/lib/actions/wallet";
 import { toast } from "react-hot-toast"
+import { walletAddState } from "../app/store/walletAddState";
+import { useSetRecoilState } from "recoil";
 
 export const AddWallet = () => {
     const [walletAddr, setWalletAddr] = useState<string>("");
     const [walletThreshold, setWalletThreshold] = useState<number>();
+    const setWalletAddState = useSetRecoilState(walletAddState);
     return <Card title="Add Wallet Details">
         <div>
             <TextInput label="Wallet Address" placeholder="Wallet Address" value={walletAddr} onChange={(value) => {setWalletAddr(value)}} />
@@ -20,6 +23,7 @@ export const AddWallet = () => {
                         toast.success("Wallet Added Successfully");
                         setWalletAddr("");
                         setWalletThreshold(undefined);
+                        setWalletAddState(true);
                     } else {
                         toast.error("Something went wrong");
                     }

@@ -19,7 +19,7 @@ export const Appbar = ({
                 Whale Alert
             </div>
             <div className="flex items-center space-x-4">
-                {user && <span className="text-white">Welcome, {user.name}</span>}
+                {user && <span className="text-black">Welcome, {user.name}</span>}
                 <Button onClick={user ? onSignout : onSignin} >
                     {user ? "Logout" : "Login"}
                 </Button>
