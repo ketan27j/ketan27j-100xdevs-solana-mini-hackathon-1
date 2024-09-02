@@ -1,25 +1,13 @@
 # Whale Alert
-# Turborepo starter
 
-This is an official starter Turborepo.
-
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest
-```
-
-## What's inside?
-
-This Turborepo includes the following packages/apps:
+Vercel URL : https://whale-alert-omega.vercel.app/
+Short Demo : ![](whale_alert_demo.mp4)
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
+- `web`: Whale Alert [Next.js](https://nextjs.org/) app to add/delete wallets and display whale transaction which are tweeted on X.(Deployed on Vercel)
+- `backend`: Backend to fetch whale transaction data using SOLANA web3js library and store it in postgresql. (Deployed on AWS EC2)
+- `@repo/ui`: a stub React component library shared by both `web` applications
 - `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
