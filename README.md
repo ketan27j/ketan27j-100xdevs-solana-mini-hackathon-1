@@ -1,7 +1,8 @@
 # Whale Alert
 
 Vercel URL : https://whale-alert-omega.vercel.app/
-Short Demo : ![](whale_alert_demo.mp4)
+
+Short Demo : [Video](https://github.com/ketan27j/ketan27j-100xdevs-solana-mini-hackathon-1/blob/main/whale_alert_demo.mp4)
 
 ### Apps and Packages
 
